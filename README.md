@@ -5,7 +5,7 @@ This is a maven module - a spring boot application, compiled with Java 11.
 
 In the project directory, you can run:
 
-## `mvn clean install`
+## `mvn clean install`.
 
 Compiles the project and downloads the dependencies.<br />
 
