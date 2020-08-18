@@ -44,4 +44,10 @@ public class OrderService {
 		throw new NotFoundException("Order Not Found");
 	}
 
+	public List<OrderInfo> getAllItems() {
+		List<OrderInfo> orders = new ArrayList<>();
+		orderRepository.findAll().iterator().forEachRemaining(orders::add);
+		return orders;
+	}
+
 }

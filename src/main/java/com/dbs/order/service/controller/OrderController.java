@@ -1,8 +1,11 @@
 package com.dbs.order.service.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,6 +19,7 @@ import com.dbs.order.service.service.OrderService;
 
 @RestController
 @RequestMapping("/order")
+@CrossOrigin
 public class OrderController {
 
 	@Autowired
@@ -41,5 +45,15 @@ public class OrderController {
 	@GetMapping("/{id}/info")
 	public OrderInfo getOrderInfo(@PathVariable(value = "id") Long id) {
 		return orderService.getOrderInfo(id);
+	}
+
+	/**
+	 * Get all orders.
+	 * 
+	 * @return
+	 */
+	@GetMapping("/all/orders")
+	public List<OrderInfo> getAllOrders() {
+		return orderService.getAllItems();
 	}
 }
