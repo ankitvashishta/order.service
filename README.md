@@ -13,3 +13,13 @@ The application uses Feign Client to access other microservice - `order.item.ser
 
 The H2 database is configured with the application and can be accessed in the browser.
 Open [http://localhost:8080/h2-console/](http://localhost:8080/h2-console/) to access the database.
+
+The microservice is enable to work as a `Eureka Client` for a `Eureka Server` to be found at https://github.com/ankitvashishta/spring.boot.eureka.server 
+
+### Eureka Client
+Eureka Client is any microservice enabled to be registered with the `Eureka Server`
+
+For the @SpringBootApplication to be discovery-aware, we include `spring-cloud-starter-netflix-eureka-client` into our classpath.
+
+Then we can annotate the application with either `@EnableDiscoveryClient` or `@EnableEurekaClient`.<br>
+This annotation is optional if we have the `spring-cloud-starter-netflix-eureka-client` dependency on the classpath.
