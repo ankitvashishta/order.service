@@ -65,7 +65,7 @@ class OrderServiceTest {
 		when(itemClient.getItemCost(itemId2)).thenReturn(20.0);
 		when(itemClient.updateItemQuantity(2L, 3)).thenReturn(true);
 		when(orderRepository.save(Mockito.anyObject())).thenReturn(orderInfo);
-		assertEquals(1L, orderService.createOrder(order).getId());
+		assertEquals(1L, orderService.createOrder(orderInfo).getId());
 	}
 
 	@Test

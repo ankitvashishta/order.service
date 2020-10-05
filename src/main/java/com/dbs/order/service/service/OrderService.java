@@ -5,16 +5,17 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import javax.ws.rs.NotFoundException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.dbs.order.service.entity.OrderInfo;
+import com.dbs.order.service.exception.ItemNotFoundException;
 import com.dbs.order.service.feign.client.ItemClient;
 import com.dbs.order.service.model.Order;
 import com.dbs.order.service.repository.OrderRepository;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.exception.HystrixRuntimeException;
+import com.netflix.hystrix.exception.HystrixRuntimeException.FailureType;
 
 @Service
 public class OrderService {
@@ -25,23 +26,33 @@ public class OrderService {
 	@Autowired
 	private ItemClient itemClient;
 
-	@Transactional
-	public OrderInfo createOrder(Order order) {
+	public OrderInfo createOrder(OrderInfo orderInfo) {
+		return orderRepository.save(orderInfo);
+	}
+
+	@HystrixCommand(fallbackMethod = "updateItemQuantity_Fallback")
+	public OrderInfo updateItemQuantity(Order order) {
 		OrderInfo orderInfo = new OrderInfo(order);
 		List<Double> costList = new ArrayList<>();
-		order.getItems().entrySet().stream().forEach(item -> {
+		order.getItems().entrySet().forEach(item -> {
 			costList.add(item.getValue() * itemClient.getItemCost(item.getKey()));
 			itemClient.updateItemQuantity(item.getKey(), item.getValue());
 		});
 		orderInfo.setTotal(costList.stream().collect(Collectors.summingDouble(Double::doubleValue)));
-		return orderRepository.save(orderInfo);
+		return orderInfo;
+	}
+
+	@SuppressWarnings("unused")
+	private OrderInfo updateItemQuantity_Fallback(Order order) {
+		throw new HystrixRuntimeException(FailureType.TIMEOUT, null, "Item client service down!! Fallback initiated.",
+				null, null);
 	}
 
 	public OrderInfo getOrderInfo(Long id) {
 		Optional<OrderInfo> orderInfo = orderRepository.findById(id);
 		if (orderInfo.isPresent())
 			return orderInfo.get();
-		throw new NotFoundException("Order Not Found");
+		throw new ItemNotFoundException();
 	}
 
 	public List<OrderInfo> getAllItems() {

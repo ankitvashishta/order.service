@@ -33,7 +33,8 @@ public class OrderController {
 	 */
 	@PostMapping("/create")
 	public OrderInfo createOrder(@Valid @RequestBody Order order) {
-		return orderService.createOrder(order);
+		OrderInfo orderInfo = orderService.updateItemQuantity(order);
+		return orderService.createOrder(orderInfo);
 	}
 
 	/**
