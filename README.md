@@ -1,6 +1,16 @@
 # order.service
 Order Service For DBS
 
+### Configurations Used
+<b>@SpringBootApplication</b> - same as combination of : <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`@EnableAutoConfiguration` - enable Spring Boot’s auto-configuration mechanism,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`@Configuration` - allow to register extra beans in the context or import additional configuration classes,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`@ComponentScan` - enable component scan on the package where the application is located<br/>
+<br/>
+<b>@EnableHystrix</b> - to implement the circuit breaker pattern specifically with Hystrix on the classpath.<br/>
+<b>@EnableFeignClients</b> - we enable component scanning for interfaces that declare they are Feign clients(via `@FeignClient`).<br/>
+<b>@EnableSwagger2</b> - is used to enable the Swagger2 for your Spring Boot application. Swagger2 is an open source project used to generate the REST API documents for RESTful web services. It provides a user interface to access our RESTful web services via the web browser.
+
 This is a maven module - a spring boot application, compiled with Java 11.
 
 In the project directory, you can run: `mvn clean install`
