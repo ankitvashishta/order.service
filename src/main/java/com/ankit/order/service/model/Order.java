@@ -1,4 +1,4 @@
-package com.dbs.order.service.model;
+package com.ankit.order.service.model;
 
 import java.util.Map;
 

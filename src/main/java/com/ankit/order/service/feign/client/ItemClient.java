@@ -1,4 +1,4 @@
-package com.dbs.order.service.feign.client;
+package com.ankit.order.service.feign.client;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

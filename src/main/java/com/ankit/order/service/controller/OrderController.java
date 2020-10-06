@@ -1,4 +1,4 @@
-package com.dbs.order.service.controller;
+package com.ankit.order.service.controller;
 
 import java.util.List;
 
@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dbs.order.service.entity.OrderInfo;
-import com.dbs.order.service.model.Order;
-import com.dbs.order.service.service.OrderService;
+import com.ankit.order.service.entity.OrderInfo;
+import com.ankit.order.service.model.Order;
+import com.ankit.order.service.service.OrderService;
 
 @RestController
 @RequestMapping("/order")

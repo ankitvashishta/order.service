@@ -1,4 +1,4 @@
-package com.dbs.order.service.service;
+package com.ankit.order.service.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
@@ -15,10 +15,11 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.dbs.order.service.entity.OrderInfo;
-import com.dbs.order.service.feign.client.ItemClient;
-import com.dbs.order.service.model.Order;
-import com.dbs.order.service.repository.OrderRepository;
+import com.ankit.order.service.entity.OrderInfo;
+import com.ankit.order.service.feign.client.ItemClient;
+import com.ankit.order.service.model.Order;
+import com.ankit.order.service.repository.OrderRepository;
+import com.ankit.order.service.service.OrderService;
 
 @SpringBootTest
 class OrderServiceTest {

@@ -1,4 +1,4 @@
-package com.dbs.order.service;
+package com.ankit.order.service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

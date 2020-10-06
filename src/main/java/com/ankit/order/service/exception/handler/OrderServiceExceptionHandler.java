@@ -1,11 +1,11 @@
-package com.dbs.order.service.exception.handler;
+package com.ankit.order.service.exception.handler;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import com.dbs.order.service.exception.ItemNotFoundException;
+import com.ankit.order.service.exception.ItemNotFoundException;
 import com.netflix.hystrix.exception.HystrixRuntimeException;
 
 @RestControllerAdvice

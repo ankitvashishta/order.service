@@ -1,4 +1,4 @@
-package com.dbs.order.service.exception;
+package com.ankit.order.service.exception;
 
 public class OrderServiceException extends RuntimeException{
 

@@ -1,4 +1,4 @@
-package com.dbs.order.service.entity;
+package com.ankit.order.service.entity;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;
@@ -14,7 +14,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-import com.dbs.order.service.model.Order;
+import com.ankit.order.service.model.Order;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

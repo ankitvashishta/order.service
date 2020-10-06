@@ -9,11 +9,11 @@
 		<version>2.3.3.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.dbs</groupId>
+	<groupId>com.ankit</groupId>
 	<artifactId>order.service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>order.service</name>
-	<description>Order Service For DBS</description>
+	<description>Order Service</description>
 
 	<properties>
 		<java.version>11</java.version>

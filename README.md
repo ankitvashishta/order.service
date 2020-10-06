@@ -1,5 +1,5 @@
 # order.service
-Order Service For DBS
+Order Service
 
 ### Annotations added to the main class.
 <b>@SpringBootApplication</b> - same as combination of : <br/>
@@ -17,7 +17,7 @@ Order Service For DBS
 ### To run the service
 This is a maven module - a spring boot application, compiled with Java 11.<br/>
 In the project directory, you can run: `mvn clean install` compiles the project and downloads the dependencies.<br />
-<b>Run the main class</b> - com.dbs.order.service.OrderApplication as a `Java Application`
+<b>Run the main class</b> - com.ankit.order.service.OrderApplication as a `Java Application`
 Open [http://localhost:8080/swagger-ui.html#](http://localhost:8080/swagger-ui.html#) to view the swagger endpoint access in the browser.<br/>
 
 The application uses Feign Client to access other microservice - `order.item.service`<br/>

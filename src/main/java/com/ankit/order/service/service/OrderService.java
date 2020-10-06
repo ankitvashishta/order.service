@@ -1,4 +1,4 @@
-package com.dbs.order.service.service;
+package com.ankit.order.service.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,11 +8,11 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dbs.order.service.entity.OrderInfo;
-import com.dbs.order.service.exception.ItemNotFoundException;
-import com.dbs.order.service.feign.client.ItemClient;
-import com.dbs.order.service.model.Order;
-import com.dbs.order.service.repository.OrderRepository;
+import com.ankit.order.service.entity.OrderInfo;
+import com.ankit.order.service.exception.ItemNotFoundException;
+import com.ankit.order.service.feign.client.ItemClient;
+import com.ankit.order.service.model.Order;
+import com.ankit.order.service.repository.OrderRepository;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.exception.HystrixRuntimeException;
 import com.netflix.hystrix.exception.HystrixRuntimeException.FailureType;

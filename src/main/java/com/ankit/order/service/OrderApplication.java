@@ -1,4 +1,4 @@
-package com.dbs.order.service;
+package com.ankit.order.service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
